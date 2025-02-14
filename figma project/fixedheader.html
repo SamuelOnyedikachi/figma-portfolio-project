@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Transparent Header</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    /* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fixed Header Styling */
+.fixed-header {
+    position: fixed; /* Keeps the header in place */
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretches the header across the viewport */
+    height: 60px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px); /* Adds the blur effect */
+    background: transparent; /* Keeps the background colorless */
+    z-index: 1000; /* Ensures it stays above other elements */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional border for visibility */
+}
+
+/* Main Content Styling */
+main {
+    padding-top: 70px; /* Prevents content from hiding behind the fixed header */
+}
+
+</style>
+<body>
+    <header class="fixed-header">
+        <h1>Transparent Blurred Header</h1>
+    </header>
+    <main>
+        <p>Scroll down to see the effect of the fixed header with a blurred transparent background.</p>
+        <div style="height: 2000px;"></div>
+    </main>
+</body>
+</html>

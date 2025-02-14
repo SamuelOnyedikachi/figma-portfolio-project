@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Dropdown</title>
+    <style>
+        .content {
+            max-height: 100px; /* Limit the height */
+            overflow: hidden;  /* Hide the overflow content */
+            transition: max-height 0.5s ease;
+        }
+
+        .content.expanded {
+            max-height: 500px; /* Expand height when clicked */
+        }
+
+        .read-more {
+            color: blue;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content" id="content">
+    <p>This is the initial visible content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae metus ut nisi pharetra gravida. Vivamus eget semper urna. Quisque et est et est aliquet feugiat. Donec fringilla, lorem non aliquam laoreet, enim libero laoreet ligula, sit amet cursus lacus neque non justo. Mauris ut ligula velit. Vestibulum tristique felis at orci efficitur, non fermentum ex aliquet. Integer non commodo metus. Fusce tincidunt, ligula a dapibus ultrices, tortor lorem convallis felis, at ullamcorper ex nisl non mi. Curabitur scelerisque, dui quis sollicitudin pellentesque, ex justo efficitur justo, vitae consectetur nisl nunc at orci. Sed vitae massa ut ligula ultricies vulputate. Sed nec velit et ligula pharetra iaculis vel id nulla.</p>
+    <p>Here is the additional content that will be hidden until "Read More" is clicked. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis felis at ligula convallis, et vehicula risus congue. Sed sagittis dui a odio facilisis, nec blandit justo dignissim. Curabitur ac arcu quam. Etiam ac elit erat. Donec euismod eros quis nisi vulputate, vel varius ligula tempor. In posuere, lorem at tempor luctus, enim risus suscipit leo, ut consectetur lorem magna ac nunc.</p>
+</div>
+
+<span class="read-more" id="read-more">Read More</span>
+
+<script>
+    const content = document.getElementById('content');
+    const readMore = document.getElementById('read-more');
+
+    readMore.addEventListener('click', () => {
+        content.classList.toggle('expanded');
+        readMore.textContent = content.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    });
+</script>
+
+</body>
+</html>
